@@ -1,0 +1,249 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x7554DAECF7B8BC36",
+      "device": "xc7z010clg400-1",
+      "gen_directory": "../../../../TP3.gen/sources_1/bd/design_2",
+      "name": "design_2",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2024.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "design_1_wrapper_0": "",
+      "tp_fsm_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "resetn_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_2_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "resetn_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "blue_led_0": {
+        "direction": "O"
+      },
+      "red_led_0": {
+        "direction": "O"
+      },
+      "green_led_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "design_1_wrapper_0": {
+        "vlnv": "xilinx.com:module_ref:design_1_wrapper:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_2_design_1_wrapper_0_0",
+        "xci_path": "ip\\design_2_design_1_wrapper_0_0\\design_2_design_1_wrapper_0_0.xci",
+        "inst_hier_path": "design_1_wrapper_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "design_1_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Enable_0": {
+            "direction": "I"
+          },
+          "Eout_0": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "Reset_0": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_0": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_2_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "end_counter_0": {
+            "direction": "O"
+          },
+          "resetn_0": {
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      },
+      "tp_fsm_0": {
+        "vlnv": "xilinx.com:module_ref:tp_fsm:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_2_tp_fsm_0_2",
+        "xci_path": "ip\\design_2_tp_fsm_0_2\\design_2_tp_fsm_0_2.xci",
+        "inst_hier_path": "tp_fsm_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "tp_fsm",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "resetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_2_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "end_counter": {
+            "direction": "I"
+          },
+          "countc": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "enablec": {
+            "direction": "O"
+          },
+          "resetc": {
+            "direction": "O"
+          },
+          "blue_led": {
+            "direction": "O"
+          },
+          "red_led": {
+            "direction": "O"
+          },
+          "green_led": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "tp_fsm_0/clk",
+          "design_1_wrapper_0/clk_0"
+        ]
+      },
+      "design_1_wrapper_0_Eout_0": {
+        "ports": [
+          "design_1_wrapper_0/Eout_0",
+          "tp_fsm_0/countc"
+        ]
+      },
+      "design_1_wrapper_0_end_counter_0": {
+        "ports": [
+          "design_1_wrapper_0/end_counter_0",
+          "tp_fsm_0/end_counter"
+        ]
+      },
+      "resetn_0_1": {
+        "ports": [
+          "resetn_0",
+          "tp_fsm_0/resetn",
+          "design_1_wrapper_0/resetn_0"
+        ]
+      },
+      "tp_fsm_0_blue_led": {
+        "ports": [
+          "tp_fsm_0/blue_led",
+          "blue_led_0"
+        ]
+      },
+      "tp_fsm_0_enablec": {
+        "ports": [
+          "tp_fsm_0/enablec",
+          "design_1_wrapper_0/Enable_0"
+        ]
+      },
+      "tp_fsm_0_green_led": {
+        "ports": [
+          "tp_fsm_0/green_led",
+          "green_led_0"
+        ]
+      },
+      "tp_fsm_0_red_led": {
+        "ports": [
+          "tp_fsm_0/red_led",
+          "red_led_0"
+        ]
+      },
+      "tp_fsm_0_resetc": {
+        "ports": [
+          "tp_fsm_0/resetc",
+          "design_1_wrapper_0/Reset_0"
+        ]
+      }
+    }
+  }
+}
