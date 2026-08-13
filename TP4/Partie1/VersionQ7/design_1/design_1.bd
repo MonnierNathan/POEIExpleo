@@ -1,0 +1,208 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x698F721E0F390B37",
+      "device": "xc7z010clg400-1",
+      "gen_directory": "../../../../TP4_pilotageLED.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2024.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "FSM_0": "",
+      "counter_unit_0": ""
+    },
+    "ports": {
+      "Reset_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "Clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "Reset_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_Clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "bouton_0": {
+        "direction": "I"
+      },
+      "LV_0": {
+        "direction": "O"
+      },
+      "LR_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "FSM_0": {
+        "vlnv": "xilinx.com:module_ref:FSM:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_FSM_0_0",
+        "xci_path": "ip\\design_1_FSM_0_0\\design_1_FSM_0_0.xci",
+        "inst_hier_path": "FSM_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "FSM",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_Clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "Counter": {
+            "direction": "I"
+          },
+          "B0": {
+            "direction": "I"
+          },
+          "LV": {
+            "direction": "O"
+          },
+          "LR": {
+            "direction": "O"
+          }
+        }
+      },
+      "counter_unit_0": {
+        "vlnv": "xilinx.com:module_ref:counter_unit:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_counter_unit_0_0",
+        "xci_path": "ip\\design_1_counter_unit_0_0\\design_1_counter_unit_0_0.xci",
+        "inst_hier_path": "counter_unit_0",
+        "parameters": {
+          "max": {
+            "value": "1"
+          },
+          "maxb": {
+            "value": "2"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "counter_unit",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "resetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_Clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "end_counter": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Clk_0_1": {
+        "ports": [
+          "Clk_0",
+          "counter_unit_0/clk",
+          "FSM_0/Clk"
+        ]
+      },
+      "FSM_0_LR": {
+        "ports": [
+          "FSM_0/LR",
+          "LR_0"
+        ]
+      },
+      "FSM_0_LV": {
+        "ports": [
+          "FSM_0/LV",
+          "LV_0"
+        ]
+      },
+      "Reset_0_1": {
+        "ports": [
+          "Reset_0",
+          "counter_unit_0/resetn",
+          "FSM_0/Reset"
+        ]
+      },
+      "bouton_0_1": {
+        "ports": [
+          "bouton_0",
+          "FSM_0/B0"
+        ]
+      },
+      "counter_unit_0_end_counter": {
+        "ports": [
+          "counter_unit_0/end_counter",
+          "FSM_0/Counter"
+        ]
+      }
+    }
+  }
+}
