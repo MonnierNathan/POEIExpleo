@@ -9,12 +9,12 @@
     "parameters": {
       "component_parameters": {
         "maxb": [ { "value": "28", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "max": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "max": [ { "value": "100000000", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "LED_driver_counter_unit_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "maxb": [ { "value": "28", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "max": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "max": [ { "value": "100000000", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],

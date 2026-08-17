@@ -14,9 +14,9 @@
       "counter_unit_0": "",
       "FSM_clignote_0": "",
       "Demux_1v4_0": "",
-      "FSM_RE_B_0": "",
       "Choix_color_0": "",
-      "registerN_0": ""
+      "RE_B0_0": "",
+      "color_change_0": ""
     },
     "ports": {
       "Clk_0": {
@@ -86,6 +86,11 @@
         "xci_name": "LED_driver_counter_unit_0_0",
         "xci_path": "ip\\LED_driver_counter_unit_0_0\\LED_driver_counter_unit_0_0.xci",
         "inst_hier_path": "counter_unit_0",
+        "parameters": {
+          "max": {
+            "value": "100000000"
+          }
+        },
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "counter_unit",
@@ -193,36 +198,6 @@
           }
         }
       },
-      "FSM_RE_B_0": {
-        "vlnv": "xilinx.com:module_ref:FSM_RE_B:1.0",
-        "ip_revision": "1",
-        "xci_name": "LED_driver_FSM_RE_B_0_0",
-        "xci_path": "ip\\LED_driver_FSM_RE_B_0_0\\LED_driver_FSM_RE_B_0_0.xci",
-        "inst_hier_path": "FSM_RE_B_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "FSM_RE_B",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "D": {
-            "direction": "I"
-          },
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "LED_driver_Clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "Q": {
-            "direction": "O"
-          }
-        }
-      },
       "Choix_color_0": {
         "vlnv": "xilinx.com:module_ref:Choix_color:1.0",
         "ip_revision": "1",
@@ -245,36 +220,93 @@
           }
         }
       },
-      "registerN_0": {
-        "vlnv": "xilinx.com:module_ref:registerN:1.0",
+      "RE_B0_0": {
+        "vlnv": "xilinx.com:module_ref:RE_B0:1.0",
         "ip_revision": "1",
-        "xci_name": "LED_driver_registerN_0_0",
-        "xci_path": "ip\\LED_driver_registerN_0_0\\LED_driver_registerN_0_0.xci",
-        "inst_hier_path": "registerN_0",
+        "xci_name": "LED_driver_RE_B0_0_0",
+        "xci_path": "ip\\LED_driver_RE_B0_0_0\\LED_driver_RE_B0_0_0.xci",
+        "inst_hier_path": "RE_B0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "registerN",
+          "ref_name": "RE_B0",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "D": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
+          "B0": {
+            "direction": "I"
           },
-          "clk": {
+          "CLK": {
             "type": "clk",
             "direction": "I",
             "parameters": {
               "ASSOCIATED_RESET": {
-                "value": "reset",
+                "value": "Resetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "LED_driver_Clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
                 "value_src": "constant"
               }
             }
           },
-          "reset": {
-            "type": "rst",
+          "Update": {
+            "direction": "O"
+          }
+        }
+      },
+      "color_change_0": {
+        "vlnv": "xilinx.com:module_ref:color_change:1.0",
+        "ip_revision": "1",
+        "xci_name": "LED_driver_color_change_0_0",
+        "xci_path": "ip\\LED_driver_color_change_0_0\\LED_driver_color_change_0_0.xci",
+        "inst_hier_path": "color_change_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "color_change",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "color_code": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "update": {
             "direction": "I"
+          },
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Resetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "LED_driver_Clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
           },
           "Q": {
             "direction": "O",
@@ -285,10 +317,16 @@
       }
     },
     "nets": {
+      "B0_1": {
+        "ports": [
+          "B0",
+          "RE_B0_0/B0"
+        ]
+      },
       "Choix_color_0_Q": {
         "ports": [
           "Choix_color_0/Q",
-          "registerN_0/D"
+          "color_change_0/color_code"
         ]
       },
       "Clk_0_1": {
@@ -296,13 +334,8 @@
           "Clk_0",
           "counter_unit_0/clk",
           "FSM_clignote_0/Clk",
-          "FSM_RE_B_0/clk"
-        ]
-      },
-      "D_0_1": {
-        "ports": [
-          "B0",
-          "FSM_RE_B_0/D"
+          "RE_B0_0/CLK",
+          "color_change_0/CLK"
         ]
       },
       "D_0_2": {
@@ -329,16 +362,16 @@
           "led_b"
         ]
       },
-      "FSM_RE_B_0_Q": {
-        "ports": [
-          "FSM_RE_B_0/Q",
-          "registerN_0/clk"
-        ]
-      },
       "FSM_clignote_0_SLED": {
         "ports": [
           "FSM_clignote_0/SLED",
           "Demux_1v4_0/D"
+        ]
+      },
+      "RE_B0_0_Update": {
+        "ports": [
+          "RE_B0_0/Update",
+          "color_change_0/update"
         ]
       },
       "Reset_0_1": {
@@ -346,19 +379,20 @@
           "Reset_0",
           "counter_unit_0/resetn",
           "FSM_clignote_0/Reset",
-          "registerN_0/reset"
+          "RE_B0_0/Resetn",
+          "color_change_0/Resetn"
+        ]
+      },
+      "color_change_0_Q": {
+        "ports": [
+          "color_change_0/Q",
+          "Demux_1v4_0/sel"
         ]
       },
       "counter_unit_0_end_counter": {
         "ports": [
           "counter_unit_0/end_counter",
           "FSM_clignote_0/Counter"
-        ]
-      },
-      "registerN_0_Q": {
-        "ports": [
-          "registerN_0/Q",
-          "Demux_1v4_0/sel"
         ]
       }
     }

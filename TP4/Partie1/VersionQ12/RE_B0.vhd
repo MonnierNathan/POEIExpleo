@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 13.08.2026 10:51:54
+-- Create Date: 17.08.2026 09:57:50
 -- Design Name: 
--- Module Name: register - Behavioral
+-- Module Name: RE_B0 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,27 +31,31 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity registerN is
-    generic (
-        N : integer := 2
-    );
-    Port ( D : in STD_LOGIC_VECTOR (N-1 downto 0);
-           clk : in STD_LOGIC;
-           reset : in STD_LOGIC;
-           Q : out STD_LOGIC_VECTOR (N-1 downto 0));
-end registerN;
+entity RE_B0 is
+    Port ( B0 : in STD_LOGIC;
+           CLK : in STD_LOGIC;
+           Resetn : in STD_LOGIC;
+           Update : out STD_LOGIC);
+end RE_B0;
 
-architecture Behavioral of registerN is
+architecture Behavioral of RE_B0 is
 
+    Signal B : std_logic := '0';
+    Signal BP : std_logic := '0';
+    
 begin
 
-    process (clk)
-    begin
-        if reset = '1' then
-            Q <= (others => '0');
-        elsif rising_edge (clk) then
-            Q <= D;
+    Process(CLK, Resetn)
+    begin 
+        if (Resetn = '1') then
+            B <= '0';
+            BP <= '0';
+        elsif (rising_edge( CLK)) then
+            BP <= B;
+            B <= B0;
         end if;
     end process;
 
+    Update <= B AND NOT BP;
+    
 end Behavioral;
