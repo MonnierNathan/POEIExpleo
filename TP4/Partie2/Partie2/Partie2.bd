@@ -15,8 +15,8 @@
       "fifo_generator_0": "",
       "RE_B0_0": "",
       "Choix_color_0": "",
-      "end_cycle_0": "",
-      "write_enable_0": ""
+      "write_enable_0": "",
+      "end_cycle_code_0": ""
     },
     "ports": {
       "led_b_0": {
@@ -174,29 +174,6 @@
           }
         }
       },
-      "end_cycle_0": {
-        "vlnv": "xilinx.com:module_ref:end_cycle:1.0",
-        "ip_revision": "1",
-        "xci_name": "Partie2_end_cycle_0_0",
-        "xci_path": "ip\\Partie2_end_cycle_0_0\\Partie2_end_cycle_0_0.xci",
-        "inst_hier_path": "end_cycle_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "end_cycle",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "end_cycle": {
-            "direction": "I"
-          },
-          "empty": {
-            "direction": "I"
-          },
-          "rd_en": {
-            "direction": "O"
-          }
-        }
-      },
       "write_enable_0": {
         "vlnv": "xilinx.com:module_ref:write_enable:1.0",
         "ip_revision": "1",
@@ -219,6 +196,29 @@
             "direction": "O"
           }
         }
+      },
+      "end_cycle_code_0": {
+        "vlnv": "xilinx.com:module_ref:end_cycle_code:1.0",
+        "ip_revision": "1",
+        "xci_name": "Partie2_end_cycle_code_0_0",
+        "xci_path": "ip\\Partie2_end_cycle_code_0_0\\Partie2_end_cycle_code_0_0.xci",
+        "inst_hier_path": "end_cycle_code_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "end_cycle_code",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "end_cycle": {
+            "direction": "I"
+          },
+          "empty": {
+            "direction": "I"
+          },
+          "rd_en": {
+            "direction": "O"
+          }
+        }
       }
     },
     "nets": {
@@ -238,8 +238,8 @@
         "ports": [
           "Clk_0_0",
           "fifo_generator_0/clk",
-          "LED_driver_wrapper_0/Clk_0",
-          "RE_B0_0/CLK"
+          "RE_B0_0/CLK",
+          "LED_driver_wrapper_0/Clk_0"
         ]
       },
       "D_0_1": {
@@ -251,7 +251,7 @@
       "LED_driver_wrapper_0_end_cycle": {
         "ports": [
           "LED_driver_wrapper_0/end_cycle",
-          "end_cycle_0/end_cycle"
+          "end_cycle_code_0/end_cycle"
         ]
       },
       "LED_driver_wrapper_0_led_b": {
@@ -281,14 +281,14 @@
       "Reset_0_0_1": {
         "ports": [
           "Reset_0_0",
-          "LED_driver_wrapper_0/Reset_0",
           "fifo_generator_0/srst",
-          "RE_B0_0/Resetn"
+          "RE_B0_0/Resetn",
+          "LED_driver_wrapper_0/Reset_0"
         ]
       },
       "end_cycle_0_rd_en": {
         "ports": [
-          "end_cycle_0/rd_en",
+          "end_cycle_code_0/rd_en",
           "fifo_generator_0/rd_en",
           "LED_driver_wrapper_0/update_0"
         ]
@@ -302,7 +302,7 @@
       "fifo_generator_0_empty": {
         "ports": [
           "fifo_generator_0/empty",
-          "end_cycle_0/empty"
+          "end_cycle_code_0/empty"
         ]
       },
       "fifo_generator_0_full": {

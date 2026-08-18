@@ -31,13 +31,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity end_cycle is
+entity end_cycle_code is
     Port ( end_cycle : in STD_LOGIC;
            empty : in STD_LOGIC;
            rd_en : out STD_LOGIC);
-end end_cycle;
+end end_cycle_code;
 
-architecture Behavioral of end_cycle is
+architecture Behavioral of end_cycle_code is
 
 begin
 
