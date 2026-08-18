@@ -1,0 +1,322 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xFC73D96455FDCD06",
+      "device": "xc7z010clg400-1",
+      "gen_directory": "../../../../TP4_pilotageLED.gen/sources_1/bd/Partie2",
+      "name": "Partie2",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2024.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "LED_driver_wrapper_0": "",
+      "fifo_generator_0": "",
+      "RE_B0_0": "",
+      "Choix_color_0": "",
+      "end_cycle_0": "",
+      "write_enable_0": ""
+    },
+    "ports": {
+      "led_b_0": {
+        "direction": "O"
+      },
+      "led_g_0": {
+        "direction": "O"
+      },
+      "led_r_0": {
+        "direction": "O"
+      },
+      "Clk_0_0": {
+        "direction": "I"
+      },
+      "Reset_0_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "B0_0": {
+        "direction": "I"
+      },
+      "B1": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "LED_driver_wrapper_0": {
+        "vlnv": "xilinx.com:module_ref:LED_driver_wrapper:1.0",
+        "ip_revision": "1",
+        "xci_name": "Partie2_LED_driver_wrapper_0_0",
+        "xci_path": "ip\\Partie2_LED_driver_wrapper_0_0\\Partie2_LED_driver_wrapper_0_0.xci",
+        "inst_hier_path": "LED_driver_wrapper_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "LED_driver_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Clk_0": {
+            "direction": "I"
+          },
+          "Reset_0": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "color_code_0": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "end_cycle": {
+            "direction": "O"
+          },
+          "led_b": {
+            "direction": "O"
+          },
+          "led_g": {
+            "direction": "O"
+          },
+          "led_r": {
+            "direction": "O"
+          },
+          "update_0": {
+            "direction": "I"
+          }
+        }
+      },
+      "fifo_generator_0": {
+        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
+        "ip_revision": "10",
+        "xci_name": "Partie2_fifo_generator_0_0",
+        "xci_path": "ip\\Partie2_fifo_generator_0_0\\Partie2_fifo_generator_0_0.xci",
+        "inst_hier_path": "fifo_generator_0",
+        "parameters": {
+          "Input_Data_Width": {
+            "value": "2"
+          },
+          "Input_Depth": {
+            "value": "16"
+          },
+          "Output_Data_Width": {
+            "value": "2"
+          }
+        }
+      },
+      "RE_B0_0": {
+        "vlnv": "xilinx.com:module_ref:RE_B0:1.0",
+        "ip_revision": "1",
+        "xci_name": "Partie2_RE_B0_0_0",
+        "xci_path": "ip\\Partie2_RE_B0_0_0\\Partie2_RE_B0_0_0.xci",
+        "inst_hier_path": "RE_B0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "RE_B0",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "B0": {
+            "direction": "I"
+          },
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Resetn",
+                "value_src": "constant"
+              }
+            }
+          },
+          "Resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "Update": {
+            "direction": "O"
+          }
+        }
+      },
+      "Choix_color_0": {
+        "vlnv": "xilinx.com:module_ref:Choix_color:1.0",
+        "ip_revision": "1",
+        "xci_name": "Partie2_Choix_color_0_0",
+        "xci_path": "ip\\Partie2_Choix_color_0_0\\Partie2_Choix_color_0_0.xci",
+        "inst_hier_path": "Choix_color_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Choix_color",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "D": {
+            "direction": "I"
+          },
+          "Q": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "end_cycle_0": {
+        "vlnv": "xilinx.com:module_ref:end_cycle:1.0",
+        "ip_revision": "1",
+        "xci_name": "Partie2_end_cycle_0_0",
+        "xci_path": "ip\\Partie2_end_cycle_0_0\\Partie2_end_cycle_0_0.xci",
+        "inst_hier_path": "end_cycle_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "end_cycle",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "end_cycle": {
+            "direction": "I"
+          },
+          "empty": {
+            "direction": "I"
+          },
+          "rd_en": {
+            "direction": "O"
+          }
+        }
+      },
+      "write_enable_0": {
+        "vlnv": "xilinx.com:module_ref:write_enable:1.0",
+        "ip_revision": "1",
+        "xci_name": "Partie2_write_enable_0_0",
+        "xci_path": "ip\\Partie2_write_enable_0_0\\Partie2_write_enable_0_0.xci",
+        "inst_hier_path": "write_enable_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "write_enable",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Update": {
+            "direction": "I"
+          },
+          "full": {
+            "direction": "I"
+          },
+          "wr_en": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "B0_0_1": {
+        "ports": [
+          "B0_0",
+          "RE_B0_0/B0"
+        ]
+      },
+      "Choix_color_0_Q": {
+        "ports": [
+          "Choix_color_0/Q",
+          "fifo_generator_0/din"
+        ]
+      },
+      "Clk_0_0_1": {
+        "ports": [
+          "Clk_0_0",
+          "fifo_generator_0/clk",
+          "LED_driver_wrapper_0/Clk_0",
+          "RE_B0_0/CLK"
+        ]
+      },
+      "D_0_1": {
+        "ports": [
+          "B1",
+          "Choix_color_0/D"
+        ]
+      },
+      "LED_driver_wrapper_0_end_cycle": {
+        "ports": [
+          "LED_driver_wrapper_0/end_cycle",
+          "end_cycle_0/end_cycle"
+        ]
+      },
+      "LED_driver_wrapper_0_led_b": {
+        "ports": [
+          "LED_driver_wrapper_0/led_b",
+          "led_b_0"
+        ]
+      },
+      "LED_driver_wrapper_0_led_g": {
+        "ports": [
+          "LED_driver_wrapper_0/led_g",
+          "led_g_0"
+        ]
+      },
+      "LED_driver_wrapper_0_led_r": {
+        "ports": [
+          "LED_driver_wrapper_0/led_r",
+          "led_r_0"
+        ]
+      },
+      "RE_B0_0_Update": {
+        "ports": [
+          "RE_B0_0/Update",
+          "write_enable_0/Update"
+        ]
+      },
+      "Reset_0_0_1": {
+        "ports": [
+          "Reset_0_0",
+          "LED_driver_wrapper_0/Reset_0",
+          "fifo_generator_0/srst",
+          "RE_B0_0/Resetn"
+        ]
+      },
+      "end_cycle_0_rd_en": {
+        "ports": [
+          "end_cycle_0/rd_en",
+          "fifo_generator_0/rd_en",
+          "LED_driver_wrapper_0/update_0"
+        ]
+      },
+      "fifo_generator_0_dout": {
+        "ports": [
+          "fifo_generator_0/dout",
+          "LED_driver_wrapper_0/color_code_0"
+        ]
+      },
+      "fifo_generator_0_empty": {
+        "ports": [
+          "fifo_generator_0/empty",
+          "end_cycle_0/empty"
+        ]
+      },
+      "fifo_generator_0_full": {
+        "ports": [
+          "fifo_generator_0/full",
+          "write_enable_0/full"
+        ]
+      },
+      "write_enable_0_wr_en": {
+        "ports": [
+          "write_enable_0/wr_en",
+          "fifo_generator_0/wr_en"
+        ]
+      }
+    }
+  }
+}
