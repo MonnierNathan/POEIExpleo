@@ -1,0 +1,478 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x95C0D194DBCC4F7E",
+      "device": "xc7z010clg400-1",
+      "gen_directory": "../../../../TP5.gen/sources_1/bd/TP5",
+      "name": "TP5",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2024.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "LED_driver_wrapper_0": "",
+      "LED_driver_wrapper_1": "",
+      "CptN_0": "",
+      "CptN_1": "",
+      "FSM_0": "",
+      "FSM_1": ""
+    },
+    "ports": {
+      "CLK_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "Reset_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "TP5_CLK_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "Reset_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "led_b_0": {
+        "direction": "O"
+      },
+      "led_g_0": {
+        "direction": "O"
+      },
+      "led_r_0": {
+        "direction": "O"
+      },
+      "led_b_1": {
+        "direction": "O"
+      },
+      "led_g_1": {
+        "direction": "O"
+      },
+      "led_r_1": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "LED_driver_wrapper_0": {
+        "vlnv": "xilinx.com:module_ref:LED_driver_wrapper:1.0",
+        "ip_revision": "1",
+        "xci_name": "TP5_LED_driver_wrapper_0_0",
+        "xci_path": "ip\\TP5_LED_driver_wrapper_0_0\\TP5_LED_driver_wrapper_0_0.xci",
+        "inst_hier_path": "LED_driver_wrapper_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "LED_driver_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Clk_0": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "TP5_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Reset_0": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "color_code_0": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "end_cycle": {
+            "direction": "O"
+          },
+          "led_b": {
+            "direction": "O"
+          },
+          "led_g": {
+            "direction": "O"
+          },
+          "led_r": {
+            "direction": "O"
+          },
+          "update_0": {
+            "direction": "I"
+          }
+        }
+      },
+      "LED_driver_wrapper_1": {
+        "vlnv": "xilinx.com:module_ref:LED_driver_wrapper:1.0",
+        "ip_revision": "1",
+        "xci_name": "TP5_LED_driver_wrapper_1_0",
+        "xci_path": "ip\\TP5_LED_driver_wrapper_1_0\\TP5_LED_driver_wrapper_1_0.xci",
+        "inst_hier_path": "LED_driver_wrapper_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "LED_driver_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Clk_0": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "TP5_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Reset_0": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "color_code_0": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "end_cycle": {
+            "direction": "O"
+          },
+          "led_b": {
+            "direction": "O"
+          },
+          "led_g": {
+            "direction": "O"
+          },
+          "led_r": {
+            "direction": "O"
+          },
+          "update_0": {
+            "direction": "I"
+          }
+        }
+      },
+      "CptN_0": {
+        "vlnv": "xilinx.com:module_ref:CptN:1.0",
+        "ip_revision": "1",
+        "xci_name": "TP5_CptN_0_0",
+        "xci_path": "ip\\TP5_CptN_0_0\\TP5_CptN_0_0.xci",
+        "inst_hier_path": "CptN_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CptN",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "signalin": {
+            "direction": "I"
+          },
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "TP5_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "cpt": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "end_cpt": {
+            "direction": "O"
+          }
+        }
+      },
+      "CptN_1": {
+        "vlnv": "xilinx.com:module_ref:CptN:1.0",
+        "ip_revision": "1",
+        "xci_name": "TP5_CptN_1_0",
+        "xci_path": "ip\\TP5_CptN_1_0\\TP5_CptN_1_0.xci",
+        "inst_hier_path": "CptN_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CptN",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "signalin": {
+            "direction": "I"
+          },
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "TP5_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "cpt": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "end_cpt": {
+            "direction": "O"
+          }
+        }
+      },
+      "FSM_0": {
+        "vlnv": "xilinx.com:module_ref:FSM:1.0",
+        "ip_revision": "1",
+        "xci_name": "TP5_FSM_0_0",
+        "xci_path": "ip\\TP5_FSM_0_0\\TP5_FSM_0_0.xci",
+        "inst_hier_path": "FSM_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "FSM",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "end_cpt": {
+            "direction": "I"
+          },
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "TP5_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "update": {
+            "direction": "O"
+          },
+          "color_code": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "FSM_1": {
+        "vlnv": "xilinx.com:module_ref:FSM:1.0",
+        "ip_revision": "1",
+        "xci_name": "TP5_FSM_1_0",
+        "xci_path": "ip\\TP5_FSM_1_0\\TP5_FSM_1_0.xci",
+        "inst_hier_path": "FSM_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "FSM",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "end_cpt": {
+            "direction": "I"
+          },
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "TP5_CLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "update": {
+            "direction": "O"
+          },
+          "color_code": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "CLK_0_1": {
+        "ports": [
+          "CLK_0",
+          "LED_driver_wrapper_0/Clk_0",
+          "LED_driver_wrapper_1/Clk_0",
+          "CptN_0/CLK",
+          "CptN_1/CLK",
+          "FSM_0/CLK",
+          "FSM_1/CLK"
+        ]
+      },
+      "CptN_0_end_cpt": {
+        "ports": [
+          "CptN_0/end_cpt",
+          "FSM_0/end_cpt"
+        ]
+      },
+      "CptN_1_end_cpt": {
+        "ports": [
+          "CptN_1/end_cpt",
+          "FSM_1/end_cpt"
+        ]
+      },
+      "FSM_0_color_code": {
+        "ports": [
+          "FSM_0/color_code",
+          "LED_driver_wrapper_0/color_code_0"
+        ]
+      },
+      "FSM_0_update": {
+        "ports": [
+          "FSM_0/update",
+          "LED_driver_wrapper_0/update_0"
+        ]
+      },
+      "FSM_1_color_code": {
+        "ports": [
+          "FSM_1/color_code",
+          "LED_driver_wrapper_1/color_code_0"
+        ]
+      },
+      "FSM_1_update": {
+        "ports": [
+          "FSM_1/update",
+          "LED_driver_wrapper_1/update_0"
+        ]
+      },
+      "LED_driver_wrapper_0_end_cycle": {
+        "ports": [
+          "LED_driver_wrapper_0/end_cycle",
+          "CptN_0/signalin"
+        ]
+      },
+      "LED_driver_wrapper_0_led_b": {
+        "ports": [
+          "LED_driver_wrapper_0/led_b",
+          "led_b_0"
+        ]
+      },
+      "LED_driver_wrapper_0_led_g": {
+        "ports": [
+          "LED_driver_wrapper_0/led_g",
+          "led_g_0"
+        ]
+      },
+      "LED_driver_wrapper_0_led_r": {
+        "ports": [
+          "LED_driver_wrapper_0/led_r",
+          "led_r_0"
+        ]
+      },
+      "LED_driver_wrapper_1_end_cycle": {
+        "ports": [
+          "LED_driver_wrapper_1/end_cycle",
+          "CptN_1/signalin"
+        ]
+      },
+      "LED_driver_wrapper_1_led_b": {
+        "ports": [
+          "LED_driver_wrapper_1/led_b",
+          "led_b_1"
+        ]
+      },
+      "LED_driver_wrapper_1_led_g": {
+        "ports": [
+          "LED_driver_wrapper_1/led_g",
+          "led_g_1"
+        ]
+      },
+      "LED_driver_wrapper_1_led_r": {
+        "ports": [
+          "LED_driver_wrapper_1/led_r",
+          "led_r_1"
+        ]
+      },
+      "Reset_0_1": {
+        "ports": [
+          "Reset_0",
+          "LED_driver_wrapper_0/Reset_0",
+          "LED_driver_wrapper_1/Reset_0",
+          "CptN_0/Reset",
+          "CptN_1/Reset",
+          "FSM_0/Reset",
+          "FSM_1/Reset"
+        ]
+      }
+    }
+  }
+}
