@@ -47,7 +47,7 @@ architecture arch_imp of PMODVGA_v1_0 is
         port (
             S_AXIS_ACLK     : in std_logic;
             S_AXIS_ARESETN  : in std_logic;
-            S_AXIS_TREADY   : out std_logic;
+            S_AXIS_TREADY_ALLOW : in std_logic;
             S_AXIS_TDATA    : in std_logic_vector(C_S_AXIS_TDATA_WIDTH-1 downto 0);
             S_AXIS_TSTRB    : in std_logic_vector((C_S_AXIS_TDATA_WIDTH/8)-1 downto 0);
             S_AXIS_TLAST    : in std_logic;
@@ -83,6 +83,7 @@ architecture arch_imp of PMODVGA_v1_0 is
     signal v_cntr_reg : std_logic_vector(11 downto 0) := (others =>'0');
 
     signal active : std_logic;
+    signal axis_tready_allow : std_logic;
     
     signal h_sync_reg : std_logic := not(H_POL);
     signal v_sync_reg : std_logic := not(V_POL);
@@ -113,7 +114,7 @@ PMODVGA_v1_0_S00_AXIS_inst : PMODVGA_v1_0_S00_AXIS
 	port map (
         S_AXIS_ACLK    => s00_axis_aclk,
         S_AXIS_ARESETN => s00_axis_aresetn,
-        S_AXIS_TREADY  => s00_axis_tready,
+        S_AXIS_TREADY_ALLOW => axis_tready_allow,
         S_AXIS_TDATA   => s00_axis_tdata,
         S_AXIS_TSTRB   => s00_axis_tstrb,
         S_AXIS_TLAST   => s00_axis_tlast,
@@ -125,17 +126,32 @@ PMODVGA_v1_0_S00_AXIS_inst : PMODVGA_v1_0_S00_AXIS
     );
 
 	-- Add user logic here
-	vga_red   <= pixel_r;
-    vga_green <= pixel_g;
-    vga_blue  <= pixel_b;
+    vga_red_reg <= pixel_r when s00_axis_aresetn='1' else (others => '0');
+    vga_green_reg <= pixel_g when s00_axis_aresetn='1' else (others => '0');
+    vga_blue_reg <= pixel_b when s00_axis_aresetn='1' else (others => '0');
 ------------------------------------------------------
 -------         SYNC GENERATION                 ------
 ------------------------------------------------------
- 
+    
   process (CLK_I)
   begin
     if (rising_edge(CLK_I)) then
-      if (h_cntr_reg = (H_MAX - 1)) then
+      if (s00_axis_aresetn = '0') then
+        v_sync_dly_reg <= not(V_POL);
+        h_sync_dly_reg <= not(H_POL);
+      else
+        v_sync_dly_reg <= v_sync_reg;
+        h_sync_dly_reg <= h_sync_reg;
+      end if;
+    end if;
+  end process;
+  
+  process (CLK_I)
+  begin
+    if (rising_edge(CLK_I)) then
+      if (s00_axis_aresetn = '0') then
+        h_cntr_reg <= (others => '0');
+      elsif (h_cntr_reg = (H_MAX - 1)) then
         h_cntr_reg <= (others =>'0');
       else
         h_cntr_reg <= h_cntr_reg + 1;
@@ -146,7 +162,9 @@ PMODVGA_v1_0_S00_AXIS_inst : PMODVGA_v1_0_S00_AXIS
   process (CLK_I)
   begin
     if (rising_edge(CLK_I)) then
-      if ((h_cntr_reg = (H_MAX - 1)) and (v_cntr_reg = (V_MAX - 1))) then
+      if (s00_axis_aresetn = '0') then
+        v_cntr_reg <= (others =>'0');
+      elsif ((h_cntr_reg = (H_MAX - 1)) and (v_cntr_reg = (V_MAX - 1))) then
         v_cntr_reg <= (others =>'0');
       elsif (h_cntr_reg = (H_MAX - 1)) then
         v_cntr_reg <= v_cntr_reg + 1;
@@ -157,7 +175,9 @@ PMODVGA_v1_0_S00_AXIS_inst : PMODVGA_v1_0_S00_AXIS
   process (CLK_I)
   begin
     if (rising_edge(CLK_I)) then
-      if (h_cntr_reg >= (H_FP + FRAME_WIDTH - 1)) and (h_cntr_reg < (H_FP + FRAME_WIDTH + H_PW - 1)) then
+      if (s00_axis_aresetn = '0') then
+        h_sync_reg <= not(H_POL);
+      elsif (h_cntr_reg >= (H_FP + FRAME_WIDTH - 1)) and (h_cntr_reg < (H_FP + FRAME_WIDTH + H_PW -1)) then
         h_sync_reg <= H_POL;
       else
         h_sync_reg <= not(H_POL);
@@ -169,7 +189,9 @@ PMODVGA_v1_0_S00_AXIS_inst : PMODVGA_v1_0_S00_AXIS
   process (CLK_I)
   begin
     if (rising_edge(CLK_I)) then
-      if (v_cntr_reg >= (V_FP + FRAME_HEIGHT - 1)) and (v_cntr_reg < (V_FP + FRAME_HEIGHT + V_PW - 1)) then
+      if (s00_axis_aresetn = '0') then
+        v_sync_reg <= not(V_POL);
+      elsif (v_cntr_reg >= (V_FP + FRAME_HEIGHT - 1)) and (v_cntr_reg < (V_FP + FRAME_HEIGHT + V_PW - 1)) then
         v_sync_reg <= V_POL;
       else
         v_sync_reg <= not(V_POL);
@@ -180,20 +202,19 @@ PMODVGA_v1_0_S00_AXIS_inst : PMODVGA_v1_0_S00_AXIS
   
   active <= '1' when ((h_cntr_reg < FRAME_WIDTH) and (v_cntr_reg < FRAME_HEIGHT))else
             '0';
-            
-  --s00_axis_tready <= active;
-            
-  process (CLK_I)
-  begin
-    if (rising_edge(CLK_I)) then
-      v_sync_dly_reg <= v_sync_reg;
-      h_sync_dly_reg <= h_sync_reg;
-      vga_red_reg <= vga_red;
-      vga_green_reg <= vga_green;
-      vga_blue_reg <= vga_blue;
-    end if;
-  end process;
 
+  -- The VGA color path has two registers of latency.  Accept the first two
+  -- pixels of each line in the preceding porch and the remaining 638 pixels
+  -- during active video.  This paces the DMA to exactly 640x480 pixels per
+  -- 800x525 raster frame at the shared 25 MHz pixel clock.
+  axis_tready_allow <= '1' when
+      ((v_cntr_reg < FRAME_HEIGHT) and (h_cntr_reg < FRAME_WIDTH - 1)) or
+      ((h_cntr_reg >= H_MAX - 1) and
+       ((v_cntr_reg < FRAME_HEIGHT - 1) or (v_cntr_reg = V_MAX - 1)))
+    else '0';
+
+  s00_axis_tready <= axis_tready_allow;
+         
   VGA_HS_O <= h_sync_dly_reg;
   VGA_VS_O <= v_sync_dly_reg;
   -- Keep RGB at black during the VGA blanking intervals.  Driving a
