@@ -1,0 +1,338 @@
+
+*** Running vivado
+    with args -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/IP/overlay/overlay_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/IP/seuil/seuil_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/IP/filtre_harris/filtre_harris_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/IP/filtre_gaussien/filtre_gaussien_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/IP/luminance/luminance_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/IP/source_select/source_select_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.cache/ip 
+Command: synth_design -top design_1_wrapper -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5232
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1152.691 ; gain = 7.477
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:25]
+INFO: [Synth 8-3491] module 'design_1' declared at 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:37]
+INFO: [Synth 8-638] synthesizing module 'design_1' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:29]
+INFO: [Synth 8-3491] module 'design_1_PMODVGA_0_2' declared at 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_PMODVGA_0_2/synth/design_1_PMODVGA_0_2.vhd:56' bound to instance 'PMODVGA_0' of component 'design_1_PMODVGA_0_2' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'design_1_PMODVGA_0_2' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_PMODVGA_0_2/synth/design_1_PMODVGA_0_2.vhd:74]
+	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'PMODVGA_v1_0' declared at 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/39e7/hdl/PMODVGA_v1_0.vhd:6' bound to instance 'U0' of component 'PMODVGA_v1_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_PMODVGA_0_2/synth/design_1_PMODVGA_0_2.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'PMODVGA_v1_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/39e7/hdl/PMODVGA_v1_0.vhd:40]
+	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'PMODVGA_v1_0_S00_AXIS' declared at 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/39e7/hdl/PMODVGA_v1_0_S00_AXIS.vhd:5' bound to instance 'PMODVGA_v1_0_S00_AXIS_inst' of component 'PMODVGA_v1_0_S00_AXIS' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/39e7/hdl/PMODVGA_v1_0.vhd:110]
+INFO: [Synth 8-638] synthesizing module 'PMODVGA_v1_0_S00_AXIS' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/39e7/hdl/PMODVGA_v1_0_S00_AXIS.vhd:42]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'PMODVGA_v1_0_S00_AXIS' (1#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/39e7/hdl/PMODVGA_v1_0_S00_AXIS.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'PMODVGA_v1_0' (2#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/39e7/hdl/PMODVGA_v1_0.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'design_1_PMODVGA_0_2' (3#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_PMODVGA_0_2/synth/design_1_PMODVGA_0_2.vhd:74]
+INFO: [Synth 8-3491] module 'design_1_TGP_1_0' declared at 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_TGP_1_0/synth/design_1_TGP_1_0.vhd:56' bound to instance 'TGP_1' of component 'design_1_TGP_1_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'design_1_TGP_1_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_TGP_1_0/synth/design_1_TGP_1_0.vhd:69]
+	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M00_AXIS_START_COUNT bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'TGP_v1_0' declared at 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/2ae9/hdl/TGP_v1_0.vhd:6' bound to instance 'U0' of component 'TGP_v1_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_TGP_1_0/synth/design_1_TGP_1_0.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'TGP_v1_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/2ae9/hdl/TGP_v1_0.vhd:35]
+	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M00_AXIS_START_COUNT bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_START_COUNT bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'TGP_v1_0_M00_AXIS' declared at 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/2ae9/hdl/TGP_v1_0_M00_AXIS.vhd:5' bound to instance 'TGP_v1_0_M00_AXIS_inst' of component 'TGP_v1_0_M00_AXIS' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/2ae9/hdl/TGP_v1_0.vhd:121]
+INFO: [Synth 8-638] synthesizing module 'TGP_v1_0_M00_AXIS' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/2ae9/hdl/TGP_v1_0_M00_AXIS.vhd:42]
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_START_COUNT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TGP_v1_0_M00_AXIS' (4#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/2ae9/hdl/TGP_v1_0_M00_AXIS.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'TGP_v1_0' (5#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/2ae9/hdl/TGP_v1_0.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'design_1_TGP_1_0' (6#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_TGP_1_0/synth/design_1_TGP_1_0.vhd:69]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v:70' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:118]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v:70]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0_clk_wiz' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v:68]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:32983]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (7#1) [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:32983]
+INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:61526]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 33 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 8.000000 - type: double 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE bound to: 33 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 5 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (8#1) [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:61526]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (9#1) [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0_clk_wiz' (10#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0' (11#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v:70]
+INFO: [Synth 8-3491] module 'design_1_xlconstant_0_0' declared at 'c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57' bound to instance 'xlconstant_0' of component 'design_1_xlconstant_0_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:124]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_0_0' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 1'b1 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (12#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_0_0' (13#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (14#1) [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/synth/design_1.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (15#1) [C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:25]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1207.930 ; gain = 62.715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1207.930 ; gain = 62.715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1207.930 ; gain = 62.715
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1207.930 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Finished Parsing XDC File [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Parsing XDC File [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Finished Parsing XDC File [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.srcs/sources_1/Cora-Z7-10-Master.xdc]
+Finished Parsing XDC File [C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.srcs/sources_1/Cora-Z7-10-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.srcs/sources_1/Cora-Z7-10-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1327.785 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1327.785 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1327.785 ; gain = 182.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1327.785 ; gain = 182.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/clk_wiz_0/inst. (constraint file  C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.runs/synth_1/dont_touch.xdc, line 22).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/clk_wiz_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/xlconstant_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/TGP_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/PMODVGA_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1327.785 ; gain = 182.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1327.785 ; gain = 182.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   13 Bit       Adders := 2     
+	   2 Input   12 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input    4 Bit        Muxes := 10    
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1327.785 ; gain = 182.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1327.785 ; gain = 182.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1327.785 ; gain = 182.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1327.785 ; gain = 182.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1330.160 ; gain = 184.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1330.160 ; gain = 184.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1330.160 ; gain = 184.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1330.160 ; gain = 184.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1330.160 ; gain = 184.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1330.160 ; gain = 184.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |    61|
+|3     |LUT1      |    41|
+|4     |LUT2      |   142|
+|5     |LUT3      |    13|
+|6     |LUT4      |    47|
+|7     |LUT5      |    11|
+|8     |LUT6      |    14|
+|9     |PLLE2_ADV |     1|
+|10    |FDRE      |   128|
+|11    |IBUF      |     1|
+|12    |OBUF      |    14|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1330.160 ; gain = 184.945
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1330.160 ; gain = 65.090
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1330.160 ; gain = 184.945
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1330.160 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 62 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1353.160 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+63 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1353.160 ; gain = 207.945
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  5 12:08:00 2026...

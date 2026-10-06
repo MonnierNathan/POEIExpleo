@@ -1,0 +1,33 @@
+{
+	"version": "1.0",
+	"modules": {
+		"design_1": {
+			"proto_instances": {
+				"/PMODVGA_0/S00_AXIS": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "s00_axis_aclk"},
+						"ARESETN": { "actual": "s00_axis_aresetn"},
+						"TDATA": { "actual": "s00_axis_tdata"},
+						"TLAST": { "actual": "s00_axis_tlast"},
+						"TREADY": { "actual": "s00_axis_tready"},
+						"TSTRB": { "actual": "s00_axis_tstrb"},
+						"TVALID": { "actual": "s00_axis_tvalid"}
+					}
+				},
+				"/TGP_1/M00_AXIS": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "m00_axis_aclk"},
+						"ARESETN": { "actual": "m00_axis_aresetn"},
+						"TDATA": { "actual": "m00_axis_tdata"},
+						"TLAST": { "actual": "m00_axis_tlast"},
+						"TREADY": { "actual": "m00_axis_tready"},
+						"TSTRB": { "actual": "m00_axis_tstrb"},
+						"TVALID": { "actual": "m00_axis_tvalid"}
+					}
+				}
+			}
+		}
+	}
+}

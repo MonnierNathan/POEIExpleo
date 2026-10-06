@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Sep 29 17:39:43 2026
+# Process ID: 36652
+# Current directory: c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA
+# Command line: wbtcv.exe -mode batch -source C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.hw/webtalk/labtool_webtalk.tcl -notrace
+# Log file: c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/webtalk.log
+# Journal file: c:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/Utilisateur/Documents/POEI/Projet_fin/Projet/src/Flux_VGA/Flux_VGA.hw/webtalk/labtool_webtalk.tcl -notrace

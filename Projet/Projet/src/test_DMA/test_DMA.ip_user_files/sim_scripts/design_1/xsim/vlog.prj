@@ -1,0 +1,14 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2020.2/data/xilinx_vip/include" --include "../../../../test_DMA.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../test_DMA.gen/sources_1/bd/design_1/ipshared/34f8/hdl" --include "../../../../test_DMA.gen/sources_1/bd/design_1/ipshared/d0f7" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v" \
+"../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v" \
+"../../../bd/design_1/ip/design_1_const_dma_start_0/sim/design_1_const_dma_start_0.v" \
+"../../../bd/design_1/ip/design_1_const_dma_image_width_0/sim/design_1_const_dma_image_width_0.v" \
+"../../../bd/design_1/ip/design_1_const_dma_image_height_0/sim/design_1_const_dma_image_height_0.v" \
+"../../../bd/design_1/ip/design_1_const_dma_image_base_0/sim/design_1_const_dma_image_base_0.v" \
+"../../../bd/design_1/ip/design_1_auto_ds_0/sim/design_1_auto_ds_0.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

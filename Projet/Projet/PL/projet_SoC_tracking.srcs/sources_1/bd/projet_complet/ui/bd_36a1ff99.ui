@@ -1,0 +1,59 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_Layers":"",
+   "Default View_ScaleFactor":"0.489208",
+   "Default View_TopLeft":"327,-376",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 10 -x 2960 -y 60 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 10 -x 2960 -y 80 -defaultsOSRD
+preplace port VGA_VS_O_0 -pg 1 -lvl 10 -x 2960 -y 590 -defaultsOSRD
+preplace port VGA_HS_O_0 -pg 1 -lvl 10 -x 2960 -y 570 -defaultsOSRD
+preplace portBus VGA_R_0 -pg 1 -lvl 10 -x 2960 -y 610 -defaultsOSRD
+preplace portBus VGA_B_0 -pg 1 -lvl 10 -x 2960 -y 630 -defaultsOSRD
+preplace portBus VGA_G_0 -pg 1 -lvl 10 -x 2960 -y 650 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 5 -x 1370 -y 110 -defaultsOSRD
+preplace inst PMODVGA_0 -pg 1 -lvl 9 -x 2810 -y 610 -defaultsOSRD
+preplace inst TGP_0 -pg 1 -lvl 6 -x 1860 -y 760 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 5 -x 1370 -y 730 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 6 -x 1860 -y 270 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x -30 -y 710 -defaultsOSRD
+preplace inst filtre_gaussien_0 -pg 1 -lvl 4 -x 960 -y 770 -defaultsOSRD
+preplace inst filtre_harris_0 -pg 1 -lvl 5 -x 1370 -y 510 -defaultsOSRD
+preplace inst seuil_0 -pg 1 -lvl 7 -x 2200 -y 530 -defaultsOSRD
+preplace inst luminance_0 -pg 1 -lvl 2 -x 300 -y 730 -defaultsOSRD
+preplace inst overlay_0 -pg 1 -lvl 8 -x 2520 -y 580 -defaultsOSRD
+preplace inst axis_switch_0 -pg 1 -lvl 7 -x 2200 -y 820 -defaultsOSRD
+preplace netloc Net 1 5 4 1640 680 2040J 690 2370J 710 2660
+preplace netloc PMODVGA_0_VGA_R 1 9 1 NJ 610
+preplace netloc PMODVGA_0_VGA_B 1 9 1 NJ 630
+preplace netloc PMODVGA_0_VGA_VS_O 1 9 1 NJ 590
+preplace netloc PMODVGA_0_VGA_HS_O 1 9 1 NJ 570
+preplace netloc PMODVGA_0_VGA_G 1 9 1 NJ 650
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 9 -200 610 150 830 N 830 670 870 1100 10 1630 500 2060 680 2380 720 2670J
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 9 -210 600 NJ 600 NJ 600 N 600 1110 640 1600 670 2010J 700 2350J 730 2680J
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 7 140 630 N 630 660 580 1130 380 1620 510 2030 660 2370
+preplace netloc luminance_0_M00_AXIS 1 2 2 N 730 N
+preplace netloc seuil_0_M00_AXIS 1 7 1 N 530
+preplace netloc processing_system7_0_DDR 1 5 5 1600J 60 NJ 60 NJ 60 NJ 60 NJ
+preplace netloc filtre_gaussien_0_M00_AXIS 1 4 1 1120 440n
+preplace netloc axi_interconnect_0_M01_AXI 1 6 1 2060 270n
+preplace netloc processing_system7_0_FIXED_IO 1 5 5 1600J 80 NJ 80 NJ 80 NJ 80 NJ
+preplace netloc axis_switch_0_M01_AXIS 1 1 7 160 620 NJ 620 650 660 NJ 660 NJ 660 2020J 670 2340
+preplace netloc axis_switch_0_M00_AXIS 1 7 1 2360 510n
+preplace netloc overlay_0_M00_AXIS 1 8 1 N 580
+preplace netloc filtre_harris_0_M00_AXI 1 5 1 1610 160n
+preplace netloc filtre_harris_0_M00_AXIS 1 5 2 NJ 480 2010
+preplace netloc S00_AXI_1 1 5 1 1640 110n
+preplace netloc TGP_0_M00_AXIS 1 6 1 N 760
+preplace netloc axi_interconnect_0_M00_AXI 1 6 1 2050 250n
+levelinfo -pg 1 -230 -30 300 630 960 1370 1860 2200 2520 2810 2960
+pagesize -pg 1 -db -bbox -sgen -230 -70 3110 1540
+"
+}
+{
+   "da_axi4_cnt":"3",
+   "da_clkrst_cnt":"14",
+   "da_ps7_cnt":"1"
+}

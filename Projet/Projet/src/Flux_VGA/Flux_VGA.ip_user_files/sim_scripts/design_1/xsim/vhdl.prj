@@ -1,0 +1,10 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ipshared/2ae9/hdl/TGP_v1_0_M00_AXIS.vhd" \
+"../../../bd/design_1/ipshared/2ae9/hdl/TGP_v1_0.vhd" \
+"../../../bd/design_1/ip/design_1_TGP_1_0/sim/design_1_TGP_1_0.vhd" \
+"../../../bd/design_1/ipshared/39e7/hdl/PMODVGA_v1_0_S00_AXIS.vhd" \
+"../../../bd/design_1/ipshared/39e7/hdl/PMODVGA_v1_0.vhd" \
+"../../../bd/design_1/ip/design_1_PMODVGA_0_2/sim/design_1_PMODVGA_0_2.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+nosort

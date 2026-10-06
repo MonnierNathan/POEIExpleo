@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER seuil
+	OPTION supported_peripherals = (seuil);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = seuil;
+END DRIVER
